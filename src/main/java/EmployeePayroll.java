@@ -11,7 +11,7 @@ import java.util.Locale;
 public class EmployeePayroll {
     /**
      * readEmployeePayrollData method to read database data sequentially and returning the
-     * arraylist of employees
+     * arraylist of employees.
      */
     public List<EmployeePayrollData> readEmployeePayrollData() {
         String jdbcUrl = "jdbc:mysql://localhost:3306/employee_payroll_service";
@@ -19,7 +19,7 @@ public class EmployeePayroll {
         String password = "superstars";
         /*
         Taking an arraylist of type EmployeePayrollData and adding elements to the list one by one using
-        constructor of EmployeePayrollData class
+        constructor of EmployeePayrollData class.
          */
         List<EmployeePayrollData> employeePayrollDataList = new ArrayList<>();
         try {

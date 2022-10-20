@@ -10,7 +10,7 @@ class EmployeePayrollTest {
     @Test
     /*
     TestCase to check number of employees in the sql table by using readEmployeePayrollData method
-    and save number of employee in arraylist of employeePayrollData type
+    and save number of employee in arrayList of employeePayrollData type
      */
     public void givenEmpPayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount() {
         EmployeePayroll employeePayroll = new EmployeePayroll();
