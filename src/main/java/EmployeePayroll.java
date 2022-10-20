@@ -27,7 +27,18 @@ public class EmployeePayroll {
 
 
     public static void main(String[] args) {
-
+        String jdbcUrl = "jdbc:mysql://localhost:3306/employee_payroll_service";
+        String username = "root";
+        String password = "superstars";
+        try {
+            System.out.println("Connecting to database " + jdbcUrl);
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+            System.out.println("Connection is successfull " + connection);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        driversList();
+    }
 
 }
 
