@@ -12,7 +12,7 @@ class EmployeePayrollTest {
     TestCase to check number of employees in the sql table by using readEmployeePayrollData method
     and save number of employee in arrayList of employeePayrollData type
      */
-    public void givenEmpPayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount() {
+    public void givenEmpPayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount() throws EmployeePayrollCustomException {
         EmployeePayroll employeePayroll = new EmployeePayroll();
         List<EmployeePayrollData> employeePayrollData = employeePayroll.readEmployeePayrollData();
         Assertions.assertEquals(3, employeePayrollData.size());
@@ -24,7 +24,7 @@ class EmployeePayrollTest {
     and save number of employee in arrayList of employeePayrollData type
      */
     @Test
-    public void givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDb() {
+    public void givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDb() throws EmployeePayrollCustomException {
 
         EmployeePayroll employeePayroll = new EmployeePayroll();
 /*

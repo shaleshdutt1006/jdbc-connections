@@ -9,7 +9,7 @@ public class EmployeePayroll {
      * readEmployeePayrollData method to read database data sequentially and returning the
      * arraylist of employees.
      */
-    public List<EmployeePayrollData> readEmployeePayrollData() {
+    public List<EmployeePayrollData> readEmployeePayrollData() throws EmployeePayrollCustomException {
         String jdbcUrl = "jdbc:mysql://localhost:3306/employee_payroll_service";
         String username = "root";
         String password = "superstars";
@@ -52,13 +52,13 @@ public class EmployeePayroll {
             }
             connection.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new EmployeePayrollCustomException("Error while reading the database");
         }
         return employeePayrollDataList;
     }
 
 
-    public List<EmployeePayrollData> updateSalary(String name, double salary) {
+    public List<EmployeePayrollData> updateSalary(String name, double salary) throws EmployeePayrollCustomException {
 
         String jdbcUrl = "jdbc:mysql://localhost:3306/employee_payroll_service";
         String username = "root";
@@ -113,7 +113,10 @@ public class EmployeePayroll {
             connection.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+        /*
+        Throwing the custom exception if got error while updating salary
+         */
+            throw new EmployeePayrollCustomException("Error while updating the salary");
 
         }
         return employeePayrollDataList;
