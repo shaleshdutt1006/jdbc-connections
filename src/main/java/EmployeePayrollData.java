@@ -28,5 +28,19 @@ public class EmployeePayrollData {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        EmployeePayrollData that = (EmployeePayrollData) o;
+
+        if (id != that.id) return false;
+        if (Double.compare(that.salary, salary) != 0) return false;
+        if (!Objects.equals(name, that.name)) return false;
+        return Objects.equals(startDate, that.startDate);
+    }
+
+
 }
 

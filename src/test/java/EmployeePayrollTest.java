@@ -19,4 +19,21 @@ class EmployeePayrollTest {
 
     }
 
+    /*
+    TestCase to check salary of employee is updated in the sql table by using readEmployeePayrollData method
+    and save number of employee in arrayList of employeePayrollData type
+     */
+    @Test
+    public void givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDb() {
+
+        EmployeePayroll employeePayroll = new EmployeePayroll();
+/*
+Saving the updated salary into the result arrayList and the read data of the employeePayroll in
+expectedEmployeePayrollData
+ */
+        List<EmployeePayrollData> ExpectedEmployeePayroll = employeePayroll.readEmployeePayrollData();
+        List<EmployeePayrollData> result = employeePayroll.updateSalary("Teresa", 300000);
+        Assertions.assertEquals(ExpectedEmployeePayroll, result);
+    }
+
 }
