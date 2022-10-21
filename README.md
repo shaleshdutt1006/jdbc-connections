@@ -126,3 +126,50 @@ get the result
 - E.g. SELECT SUM(salary) FROM employee_payroll
 WHERE gender = 'F' GROUP BY gender;
 
+
+
+
+
+
+
+
+
+
+
+
+
+UseCase7-Ability to add a new
+Employee to the Payroll - Ensure DB Operation is successful then
+only add EmployeePayroll Data to the List
+- Compare Employee Payroll Object with
+DB to pass the Junit Test.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USeCase8-Ability to also add to payroll details when a
+new Employee is added to the Payroll
+- Create payroll_details table in the database.
+- All the payroll fields are derived fields from the salary.
+Assumption is Deduction is 20% of Salary, taxable pay is salary –
+deductions, tax is 10% of taxable pay and net pay is salary - tax
+- When new Employee is added, this creates a new record in
+employee_payroll as well as in payroll_detail table
+- Note: New Employee is added only when the two inserts are
+successful then only EmployeePayroll Object is updated
+
+
+
+
+
+
